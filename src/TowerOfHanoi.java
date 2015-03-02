@@ -5,25 +5,25 @@ public class TowerOfHanoi {
   public static void main(String[] args) {
     // Lager en scanner
     Scanner input = new Scanner(System.in);
-    System.out.print("Enter number of disks: ");
+    System.out.print("Skriv inn antall plater: ");
     int n = input.nextInt();
 
     // Finner løsningen ved bruk av rekursjon
-    System.out.println("The moves are:");
+    System.out.println("Trekkene er:");
     moveDisks(n, 'A', 'B', 'C');
   }
 
-  /** Metoden for å finne løsningen for å bevege n disker
+  /** Metoden for å finne løsningen for å bevege n plater
       fra fraTårn til tilTårn, ved bruk av auxTårn */
   public static void moveDisks(int n, char fraTårn,
       char tilTårn, char auxTårn) {
     if (n == 1) // stoppbetingelse
-      System.out.println("Move disk " + n + " from " +
-    		  fraTårn + " to " + tilTårn);
+      System.out.println("Flytt plate " + n + " fra " +
+    		  fraTårn + " til " + tilTårn);
     else {
       moveDisks(n - 1, fraTårn, auxTårn, tilTårn);
-      System.out.println("Move disk " + n + " from " +
-    	fraTårn + " to " + tilTårn);
+      System.out.println("flytt plate " + n + " fra " +
+    	fraTårn + " til " + tilTårn);
       moveDisks(n - 1, auxTårn, tilTårn, fraTårn);
     }
   }
