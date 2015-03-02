@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class TowerOfHanoi {
 	/** Main metode */
 	static int trekkTeller;
+	static int antallKall;
 	public static void main(String[] args) {
 		// Lager en scanner
 		Scanner input = new Scanner(System.in);
@@ -12,8 +13,10 @@ public class TowerOfHanoi {
 		// Finner løsningen ved bruk av rekursjon
 		System.out.println("Trekkene er:");
 		trekkTeller = 0;
+		antallKall = 0;
 		moveDisks(n, 'A', 'B', 'C');
 		System.out.println("\nAntall trekk utført: " + trekkTeller);
+		System.out.println("Antall kall utført: " + antallKall);
 	}
 
 	/**
@@ -21,6 +24,7 @@ public class TowerOfHanoi {
 	 * tilTårn, ved bruk av auxTårn
 	 */
 	public static void moveDisks(int n, char fraTårn, char tilTårn, char auxTårn) {
+		antallKall++;
 		if (n == 1){ // stoppbetingelse
 			System.out.println("Flytt plate " + n + " fra " + fraTårn + " til "
 					+ tilTårn);
